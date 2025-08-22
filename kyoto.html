@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+
     <header>
         <nav class="navbar">
             <a href="index.html" class="logo">Wanderlust Adventures</a>
@@ -18,34 +19,32 @@
         </nav>
     </header>
 
+    <section class="hero-section hero-kyoto">
+        <div class="hero-content">
+            <h1>Kyoto, Japan</h1>
+            <p>Immerse yourself in ancient temples and serene gardens.</p>
+        </div>
+    </section>
+
     <section class="destination-details-section">
-        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Destinations</a>
         <div class="details-content">
-            <h2 id="details-title">Paris, France</h2>
+            <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Destinations</a>
+            
             <div class="details-grid">
                 <div class="details-card">
                     <h3>Tour Packages</h3>
                     <ul>
-                        <li>Eiffel Tower Climb</li>
-                        <li>Louvre Museum Guided Tour</li>
-                        <li>Seine River Cruise</li>
-                        <li>Versailles Palace Day Trip</li>
+                        <li><a href="#" class="demo-link">3 Day Kyoto Explorer</a></li>
+                        <li><a href="#" class="demo-link">7 Day Japanese Tradition Tour</a></li>
+                        <li><a href="#" class="demo-link">10 Day Cultural Immersion</a></li>
                     </ul>
                 </div>
                 <div class="details-card">
                     <h3>Hotels</h3>
                     <ul>
-                        <li>Hotel de Vigny</li>
-                        <li>Le Bristol Paris</li>
-                        <li>Four Seasons George V</li>
-                    </ul>
-                </div>
-                <div class="details-card">
-                    <h3>Travel Options</h3>
-                    <ul>
-                        <li>By Air: Paris Charles de Gaulle Airport (CDG)</li>
-                        <li>By Train: Gare du Nord</li>
-                        <li>Local: Metro, Bus, RER</li>
+                        <li><a href="#" class="demo-link">Hyatt Regency Kyoto</a></li>
+                        <li><a href="#" class="demo-link">The Ritz-Carlton, Kyoto</a></li>
+                        <li><a href="#" class="demo-link">Four Seasons Hotel Kyoto</a></li>
                     </ul>
                 </div>
             </div>
@@ -62,5 +61,17 @@
             </div>
         </div>
     </footer>
+
+    <div id="demo-popup" class="modal-overlay">
+        <div class="modal">
+            <span class="close-btn">&times;</span>
+            <div class="modal-content">
+                <h3>This is a Demo</h3>
+                <p>This feature is not active.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

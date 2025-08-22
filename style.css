@@ -128,35 +128,6 @@ h1, h2, h3 {
     opacity: 0.9;
 }
 
-.search-bar {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-.search-bar input {
-    width: 300px;
-    padding: 15px 20px;
-    border: none;
-    border-radius: 50px 0 0 50px;
-    font-size: 1rem;
-    outline: none;
-}
-
-.search-bar button {
-    padding: 15px 25px;
-    border: none;
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    border-radius: 0 50px 50px 0;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.search-bar button:hover {
-    background-color: #0056b3;
-}
-
 /* Destinations Section */
 .destinations-section {
     background-color: var(--white-color);
@@ -175,6 +146,7 @@ h1, h2, h3 {
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none; /* Removed from previous step */
 }
 
 .destination-card:hover {
@@ -218,14 +190,6 @@ h1, h2, h3 {
     max-width: 400px;
 }
 
-.testimonial-card img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-}
-
 .testimonial-card p {
     font-style: italic;
     margin-bottom: 15px;
@@ -261,54 +225,6 @@ h1, h2, h3 {
     color: var(--primary-color);
 }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-    .navbar {
-        padding: 1rem 2rem;
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: var(--white-color);
-        position: absolute;
-        top: 60px;
-        left: 0;
-        padding: 1rem 0;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links li {
-        margin: 0;
-        text-align: center;
-        padding: 15px 0;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .search-bar {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .search-bar input, .search-bar button {
-        width: 100%;
-        border-radius: 50px;
-        margin-bottom: 10px;
-    }
-}
-
 /* New Contact Section */
 .contact-section {
     background-color: var(--white-color);
@@ -336,6 +252,7 @@ h1, h2, h3 {
     margin-right: 10px;
 }
 
+/* Pop-up Modal Styles */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -387,4 +304,119 @@ h1, h2, h3 {
 .modal-content h3 {
     color: var(--secondary-color);
     margin-bottom: 10px;
+}
+
+/* Destination Details Page Styles */
+.destination-details-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: var(--white-color);
+}
+
+.back-btn {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Added for anchor tags */
+    display: inline-block;
+}
+
+.back-btn:hover {
+    background-color: #0056b3;
+}
+
+.details-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.details-card {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.details-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.details-card ul {
+    list-style: none;
+    text-align: left;
+}
+
+.details-card li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.details-card li:last-child {
+    border-bottom: none;
+}
+
+/* Specific Hero Image Styles */
+.hero-paris {
+    background: url('https://images.unsplash.com/photo-1502602898624-e202396e95c4') no-repeat center center/cover;
+}
+.hero-kyoto {
+    background: url('https://images.unsplash.com/photo-1510414842594-ead4716fe173') no-repeat center center/cover;
+}
+.hero-bali {
+    background: url('https://images.unsplash.com/photo-1549419149-165f12e84518') no-repeat center center/cover;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 2rem;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--white-color);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 1rem 0;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .destination-card h3 {
+        margin-top: 15px;
+        font-size: 1.2rem;
+    }
 }
