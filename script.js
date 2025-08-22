@@ -21,18 +21,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const demoPopup = document.querySelector('#demo-popup');
     const closeBtn = document.querySelector('.close-btn');
 
-    // Show pop-up when 'Book Now' is clicked
     bookNowBtn.addEventListener('click', (event) => {
-        event.preventDefault(); // Prevents the default anchor tag behavior
+        event.preventDefault();
         demoPopup.classList.add('visible');
     });
 
-    // Hide pop-up when close button is clicked
     closeBtn.addEventListener('click', () => {
         demoPopup.classList.remove('visible');
     });
 
-    // Hide pop-up when clicking outside the modal
     demoPopup.addEventListener('click', (event) => {
         if (event.target === demoPopup) {
             demoPopup.classList.remove('visible');
