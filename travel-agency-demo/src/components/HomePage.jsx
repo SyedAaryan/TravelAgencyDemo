@@ -1,9 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import Footer from './Footer';
+import Hero from './Hero'; // Import the new Hero component
 
 const HomePage = () => {
   return (
-    <>
+    <motion.div
+      className="page-transition"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+    >
+      <Hero /> {/* Place the Hero component here */}
       <section id="destinations" className="destinations-section">
         <h2>Featured Destinations</h2>
         <div className="destination-grid">
@@ -64,7 +74,8 @@ const HomePage = () => {
           <p><i className="fas fa-map-marker-alt"></i> 123 Travel Lane, Adventure City</p>
         </div>
       </section>
-    </>
+      <Footer />
+    </motion.div>
   );
 };
 

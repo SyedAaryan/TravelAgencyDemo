@@ -420,3 +420,10 @@ h1, h2, h3 {
         font-size: 1.2rem;
     }
 }
+
+/* Add to the end of index.css */
+.page-transition {
+    width: 100%;
+    position: absolute;
+    top: 0;
+}

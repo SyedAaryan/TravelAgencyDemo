@@ -1,6 +1,8 @@
-import React, { useState } from 'react'; // Import useState
+import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import Modal from './Modal'; // Import the Modal component
+import { motion } from 'framer-motion';
+import Modal from './Modal';
+import Footer from './Footer';
 
 const destinationData = {
     paris: {
@@ -50,24 +52,23 @@ const destinationData = {
     }
 };
 
-const DestinationPage = () => {
+// We now accept 'onOpenModal' as a prop
+const DestinationPage = ({ onOpenModal }) => {
     const { destinationId } = useParams();
     const data = destinationData[destinationId];
-
-    // Modal state
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const handleLinkClick = (e) => {
-        e.preventDefault(); // Prevent the link from navigating
-        setIsModalOpen(true);
-    };
 
     if (!data) {
         return <div>Destination not found!</div>;
     }
 
     return (
-        <>
+        <motion.div
+          className="page-transition"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -20 }}
+          transition={{ duration: 0.5 }}
+        >
             <section className={`hero-section ${data.heroClass}`}>
                 <div className="hero-content">
                     <h1>{data.title}</h1>
@@ -84,7 +85,8 @@ const DestinationPage = () => {
                             <h3>Tour Packages</h3>
                             <ul>
                                 {data.tours.map(tour => (
-                                    <li key={tour}><a href="#" onClick={handleLinkClick}>{tour}</a></li>
+                                    // We directly call the function from props
+                                    <li key={tour}><a href="#" onClick={onOpenModal}>{tour}</a></li>
                                 ))}
                             </ul>
                         </div>
@@ -92,22 +94,16 @@ const DestinationPage = () => {
                             <h3>Hotels</h3>
                             <ul>
                                 {data.hotels.map(hotel => (
-                                    <li key={hotel}><a href="#" onClick={handleLinkClick}>{hotel}</a></li>
+                                    // We directly call the function from props
+                                    <li key={hotel}><a href="#" onClick={onOpenModal}>{hotel}</a></li>
                                 ))}
                             </ul>
                         </div>
                     </div>
                 </div>
             </section>
-
-            {/* The Modal Component */}
-            <Modal
-                show={isModalOpen}
-                onClose={() => setIsModalOpen(false)}
-                title="This is a Demo"
-                message="This feature is not active"
-            />
-        </>
+            <Footer />
+        </motion.div>
     );
 };
 
