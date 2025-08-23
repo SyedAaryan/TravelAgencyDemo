@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = () => {
+const Header = ({ onBookNowClick }) => {
   return (
     <header>
       <nav className="navbar">
@@ -9,7 +9,7 @@ const Header = () => {
           <li><a href="#destinations">Destinations</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="#" className="btn-cta">Book Now</a></li>
+          <li><a href="#" className="btn-cta" onClick={onBookNowClick}>Book Now</a></li>
         </ul>
         <div className="menu-toggle">
           <i className="fas fa-bars"></i>

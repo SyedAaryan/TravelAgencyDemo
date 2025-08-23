@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   return (
@@ -6,21 +7,21 @@ const HomePage = () => {
       <section id="destinations" className="destinations-section">
         <h2>Featured Destinations</h2>
         <div className="destination-grid">
-          <a href="/paris" className="destination-card">
+          <Link to="/paris" className="destination-card">
             <img src="/images/paris.png" alt="Paris, France" />
             <h3>Paris, France</h3>
             <p>The City of Light awaits with its iconic landmarks and romantic charm.</p>
-          </a>
-          <a href="/kyoto" className="destination-card">
+          </Link>
+          <Link to="/kyoto" className="destination-card">
             <img src="/images/kyoto.png" alt="Kyoto, Japan" />
             <h3>Kyoto, Japan</h3>
             <p>Immerse yourself in ancient temples and serene gardens.</p>
-          </a>
-          <a href="/bali" className="destination-card">
+          </Link>
+          <Link to="/bali" className="destination-card">
             <img src="/images/bali.png" alt="Bali, Indonesia" />
             <h3>Bali, Indonesia</h3>
             <p>Discover a tropical paradise with stunning beaches and vibrant culture.</p>
-          </a>
+          </Link>
         </div>
       </section>
 
